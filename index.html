@@ -14,7 +14,7 @@
   </head>
   <body>
     <header>
-      <img src="assets/logo.svg" alt="Logo Dev Finance">
+      <img src="assets/logo.svg" alt="Logo Dev Finance" />
     </header>
     <main class="container">
       <section id="balance">
@@ -23,7 +23,7 @@
         <div class="card">
           <h3>
             <span>Entradas</span>
-            <img src="assets/income.svg" alt="Image de Entradas">
+            <img src="assets/income.svg" alt="Image de Entradas" />
           </h3>
           <p>R$ 5.000,00</p>
         </div>
@@ -31,7 +31,7 @@
         <div class="card">
           <h3>
             <span>Saídas</span>
-            <img src="assets/expense.svg" alt="Image de Saídas">
+            <img src="assets/expense.svg" alt="Image de Saídas" />
           </h3>
           <p>R$ 2.000,00</p>
         </div>
@@ -39,7 +39,7 @@
         <div class="card total">
           <h3>
             <span>Total</span>
-            <img src="assets/total.svg" alt="Image de Total">
+            <img src="assets/total.svg" alt="Image de Total" />
           </h3>
           <p>R$ 3.000,00</p>
         </div>
@@ -64,7 +64,7 @@
               <td class="expense">-R$500,00</td>
               <td class="data">23/01/2021</td>
               <td>
-                <img src="assets/minus.svg" alt="Remover Transação">
+                <img src="assets/minus.svg" alt="Remover Transação" />
               </td>
             </tr>
             <tr>
@@ -72,7 +72,7 @@
               <td class="income">-R$500,00</td>
               <td class="data">23/01/2021</td>
               <td>
-                <img src="assets/minus.svg" alt="Remover Transação">
+                <img src="assets/minus.svg" alt="Remover Transação" />
               </td>
             </tr>
             <tr>
@@ -80,13 +80,42 @@
               <td class="expense">-R$500,00</td>
               <td class="data">23/01/2021</td>
               <td>
-                <img src="assets/minus.svg" alt="Remover Transação">
+                <img src="assets/minus.svg" alt="Remover Transação" />
               </td>
             </tr>
           </tbody>
         </table>
       </section>
     </main>
+
+    <div class="modal-overlay active">
+      <div class="modal">
+        <div id="form">
+          <h2>Nova Transação</h2>
+          <form action="">
+            <div class="input-group">
+              <label class="sr-only" for="description">Descrição</label>
+              <input
+                type="text"
+                id="description"
+                name="description"
+                placeholder="Descrição"
+              />
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="amount">Descrição</label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                placeholder="Descrição"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <footer><p>dev.finance$</p></footer>
   </body>
 </html>
