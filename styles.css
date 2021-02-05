@@ -1,6 +1,10 @@
 /* GLOBAL ==================== */
 :root {
     --dark-blue: #363f5f;
+    --green: #49aa26;
+    --ligth-green: #3dd705;
+    --red: #e92929;
+
 }
 * {
     margin: 0;
@@ -49,17 +53,51 @@ h2 {
 /* Links & Buttons =========== */
 
 a {
-    color: #49aa26;
+    color: var(--green);
     text-decoration: none;
 }
 
 a:hover {
-    color: #3dd705;
+    color: var(--ligth-green);
+}
+
+button  {
+    width: 100%;
+    height: 50px;
+
+    border: none;
+    color: white;
+    background: var(--green);
+
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background: var(--ligth-green);
 }
 
 .button.new {
     display: inline-block;
     margin-bottom: .8rem;
+}
+
+.button.cancel {
+    color: var(--red);
+    border: 2px var(--red) solid;
+    border-radius: 0.25rem;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0.6;
+}
+
+.button.cancel:hover {
+    opacity: 1;
 }
 
 
@@ -112,7 +150,7 @@ header {
 }
 
 .card.total {
-    background: #49aa26;  
+    background: var(--green); 
     color: white; 
 }
 
@@ -192,6 +230,8 @@ td.expense {
 
     opacity: 0;
     visibility: hidden;
+
+    z-index: 999;
 }
 
 .modal-overlay.active {
@@ -203,7 +243,7 @@ td.expense {
     background: #f0f2f5;
     padding: 2.4rem;
     position: relative;
-
+    z-index: 1;
 }
 
 
@@ -238,7 +278,10 @@ input {
     align-items: center;
 }
 
-.input-group.actions a {}
+.input-group.actions .button,
+.input-group.actions button {
+     width: 48%;
+}
 
 /* Footer ==================== */
 footer {
