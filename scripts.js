@@ -17,34 +17,38 @@ const Modal = {
     }
 }
 
-const transactions = [
-
-    {
-    description: 'Luz',
-    amount: -50000,
-    date: '23/01/2021',
-    },
-
-    {
-    description: 'Website',
-    amount: -500000,
-    date: '23/01/2021',
-    },
-
-    {
-    description: 'Internet',
-    amount: -50000,
-    date: '23/01/2021',
-    },
-
-]
-
 const Transaction = {
 
-    all:transactions,
+    all:[
+
+        {
+        description: 'Luz',
+        amount: -50000,
+        date: '23/01/2021',
+        },
+    
+        {
+        description: 'Website',
+        amount: -500000,
+        date: '23/01/2021',
+        },
+    
+        {
+        description: 'Internet',
+        amount: -50000,
+        date: '23/01/2021',
+        },
+    
+    ],
 
     add(transaction) {
         Transaction.all.push(transaction)
+
+        App.reload()
+    },
+
+    remove(index) {
+        Transaction.all.splice(index, 1)
 
         App.reload()
     },
@@ -137,6 +141,56 @@ const Utils = {
     }
 }
 
+const Form = {
+
+    //pegando os dados do formulario
+    description: document.querySelector('input#description'),
+    amount: document.querySelector('input#amount'),
+    date: document.querySelector('input#date'),
+
+    getValues() {
+        return {
+            description: Form.description.value,
+            amount: Form.amount.value,
+            date: Form.date.value,
+        }
+    },
+
+    formatDate(){
+        console.log('Formatar os dados')
+    },
+    
+    validateField() {
+        const { description, amount, date } = Form.getValues()
+        
+        if( description.trim() === "" || 
+            amount.trim() === "" || 
+            date.trim() === "" ) {
+                throw new Error("Por favor, preencha todos os campos") 
+            } 
+    },
+    
+    submit(event) {
+        event.preventDefault()
+
+        try {
+            // verificar se todas as informaçoes foram preechidas.
+            Form.validateField()
+            // formatar os dados para salvar
+
+            // salvar
+
+            // limpar os dados do formulario.
+
+            // fechar modal
+
+            // Atualizar a aplicação
+            
+        } catch (error) {
+            alert(error.message)               
+        }
+    }  
+}
 
 const App = {
     init() {
@@ -150,17 +204,9 @@ const App = {
     },
 
     reload() {
-
         DOM.clearTransactions();
         App.init();
-
     },
 }
 
 App.init()
-
-Transaction.add({
-    description: "Alo",
-    amount: 200,
-    date: '23/01/2021'
-})
